@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+<body>
+    <h1>Menu de Fast Food</h1>
+
+    <div id="resultadoPedido"></div>
+
+    <script>
+        const menu = [
+            { opcao: 1, promocao: "Big Super Sanduba", especificacao: "2 hambúrgueres, queijo, batata frita e refrigerante", preco: 5.00 },
+            { opcao: 2, promocao: "Quase Super Sanduba", especificacao: "1 hambúrguer, batata frita e refrigerante", preco: 3.00 },
+            { opcao: 3, promocao: "Mirradus Sanduba", especificacao: "1 misto quente e refrigerante", preco: 1.50 }
+        ];
+
+        const pedido = parseInt(prompt("Escolha uma opção do menu:\n1 - Big Super Sanduba\n2 - Quase Super Sanduba\n3 - Mirradus Sanduba"));
+
+        let encontrado = false;
+        let precoPedido = 0;
+        let promocaoPedido = "";
+        let especificacaoPedido = "";
+
+        for (const item of menu) {
+            if (item.opcao === pedido) {
+                encontrado = true;
+                precoPedido = item.preco;
+                promocaoPedido = item.promocao;
+                especificacaoPedido = item.especificacao;
+                break;
+            }
+        }
+
+        const resultadoDiv = document.getElementById("resultadoPedido");
+        if (encontrado == true) {
+            resultadoDiv.innerHTML = `Você escolheu: ${promocaoPedido}<br>Preço: R$${precoPedido.toFixed(2)}<br>Especificação: ${especificacaoPedido}`;
+        } else {
+            resultadoDiv.innerHTML = "Opção inválida.";
+        }
+    </script>
+</body>
+</html>

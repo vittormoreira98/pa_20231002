@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+<body>
+    
+    <div id="situacao"></div>
+
+    <h3>Notas ordenadas descrescentemente:</h3>
+
+    <table id="notas">
+    </table>
+
+    <script>
+        // Defina os números fixos aqui
+        let nome = prompt("Digite nome do aluno");
+        let nota1 = Number(prompt("Digite nota 1"));
+        let nota2 = Number(prompt("Digite nota 2"));
+        let nota3 = Number(prompt("Digite nota 3"));
+        
+        media = (nota1+nota2+nota3)/3;
+        
+        switch (true) {
+            case media >= 6:
+                document.getElementById("situacao").innerHTML = "<h2>O aluno " + nome + " foi aprovado com média " + media + "</h2>";
+                break;
+            case media < 6:
+                document.getElementById("situacao").innerHTML = "<h2>O aluno " + nome + " foi reprovado com média " + media + "</h2>";
+                break;
+            default:
+                break;
+        }
+        
+        const numerosArray = [nota1, nota2, nota3].sort((a, b) => b - a);
+        const notas = document.getElementById("notas");
+
+        notas.innerHTML = numerosArray.map(numero => `<tr><td>${numero}</td></tr>`).join('');
+
+    </script>
+</body>
+</html>

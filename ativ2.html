@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    <h1>Ordenação por Peso</h1>
+
+    <script>
+        const pessoas = [];
+
+        for (let i = 0; i < 3; i++) {
+            const nome = prompt(`Digite o nome da pessoa ${i + 1}:`);
+            const peso = parseFloat(prompt(`Digite o peso de ${nome}:`));
+            pessoas.push({ nome, peso });
+        }
+
+        pessoas.sort((a, b) => b.peso - a.peso);
+
+        document.write("<h2>Pessoas Ordenadas por Peso (Decrescente):</h2>");
+        document.write("<ul>");
+        
+        for (const pessoa of pessoas) {
+            document.write(`<li>${pessoa.nome} - Peso: ${pessoa.peso} kg</li>`);
+        }
+        
+        document.write("</ul>");
+    </script>
+</body>
+</html>

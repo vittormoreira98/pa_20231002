@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formato de Data</title>
+</head>
+<body>
+    <h1>Formato de Data</h1>
+
+    <script>
+        const dataInput = prompt("Digite uma data no formato dd/mm/aaaa:");
+
+        const dataRegex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+        const match = dataInput.match(dataRegex);
+
+        if (match) {
+            const dia = parseInt(match[1]);
+            const mes = parseInt(match[2]);
+            const ano = parseInt(match[3]);
+
+            let nomeMes = "";
+
+            switch (mes) {
+                case 1:
+                    nomeMes = "janeiro";
+                    break;
+                case 2:
+                    nomeMes = "fevereiro";
+                    break;
+                case 3:
+                    nomeMes = "março";
+                    break;
+                case 4:
+                    nomeMes = "abril";
+                    break;
+                case 5:
+                    nomeMes = "maio";
+                    break;
+                case 6:
+                    nomeMes = "junho";
+                    break;
+                case 7:
+                    nomeMes = "julho";
+                    break;
+                case 8:
+                    nomeMes = "agosto";
+                    break;
+                case 9:
+                    nomeMes = "setembro";
+                    break;
+                case 10:
+                    nomeMes = "outubro";
+                    break;
+                case 11:
+                    nomeMes = "novembro";
+                    break;
+                case 12:
+                    nomeMes = "dezembro";
+                    break;
+                default:
+                    nomeMes = "mês inválido";
+                    break;
+            }
+
+            if (nomeMes !== "mês inválido") {
+                document.write(`<p>${dia} de ${nomeMes} de ${ano}</p>`);
+            } else {
+                document.write("<p>Mês inválido. Por favor, insira um mês válido.</p>");
+            }
+        } else {
+            document.write("<p>Data inválida. Por favor, use o formato dd/mm/aaaa.</p>");
+        }
+    </script>
+</body>
+</html>

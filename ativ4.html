@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+<body>
+    <h1>Cálculo de Comissão</h1>
+
+    <script>
+        const nomeFuncionario = prompt("Digite o nome do funcionário:");
+        const quantidadeProdutos = parseInt(prompt("Digite a quantidade de produtos vendidos:"));
+
+        let comissao = 0;
+
+        switch (true) {
+            case quantidadeProdutos <= 250:
+                comissao = quantidadeProdutos * 1.00;
+                break;
+            case quantidadeProdutos <= 500:
+                comissao = quantidadeProdutos * 1.50;
+                break;
+            default:
+                comissao = quantidadeProdutos * 2.00;
+        }
+
+        document.write(`<p>O funcionário ${nomeFuncionario} vendeu ${quantidadeProdutos} produtos e receberá uma comissão de R$${comissao.toFixed(2)}</p>`);
+    </script>
+</body>
+</html>
